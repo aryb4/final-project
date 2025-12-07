@@ -33,58 +33,9 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Your Name</p>
+    <p>&copy; 2025 Aryan Bonula</p>
   </footer>
 
-  <script>
-    // Simple background animation: moving circles
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    let circles = [];
-
-    function initCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      canvas.style.position = 'absolute';
-      canvas.style.top = 0;
-      canvas.style.left = 0;
-      canvas.style.zIndex = -1;
-      document.getElementById('hero').appendChild(canvas);
-
-      for (let i = 0; i < 50; i++) {
-        circles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 3 + 1,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5,
-          alpha: Math.random() * 0.5 + 0.2
-        });
-      }
-      animate();
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      circles.forEach(c => {
-        c.x += c.dx;
-        c.y += c.dy;
-        if (c.x < 0 || c.x > canvas.width) c.dx *= -1;
-        if (c.y < 0 || c.y > canvas.height) c.dy *= -1;
-        ctx.beginPath();
-        ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255,' + c.alpha + ')';
-        ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', () => {
-      circles = [];
-      initCanvas();
-    });
-
-    initCanvas();
-  </script>
+<script src="js/background.js"></script>
 </body>
 </html>
