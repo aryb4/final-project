@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Your Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/logo.svg" alt="Your Brand Logo" /></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">Who I Am</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="home-hero" id="hero">
+    <h1 class="fade-in">Hello — I’m a CIS Student at MSU</h1>
+    <p class="fade-in" style="animation-delay: 0.3s;">
+      I’m studying Computer Information Systems at Michigan State University.  
+      I’m passionate about building reliable, accessible, and user‑friendly web applications.  
+      My goal is to contribute to meaningful projects where technology meets real-world impact.
+    </p>
+  </section>
+
+  <main class="content">
+    <p>Scroll down to explore more about my projects and background.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+  <script>
+    // Simple background animation: moving circles
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    let circles = [];
+
+    function initCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.position = 'absolute';
+      canvas.style.top = 0;
+      canvas.style.left = 0;
+      canvas.style.zIndex = -1;
+      document.getElementById('hero').appendChild(canvas);
+
+      for (let i = 0; i < 50; i++) {
+        circles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 3 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+          alpha: Math.random() * 0.5 + 0.2
+        });
+      }
+      animate();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      circles.forEach(c => {
+        c.x += c.dx;
+        c.y += c.dy;
+        if (c.x < 0 || c.x > canvas.width) c.dx *= -1;
+        if (c.y < 0 || c.y > canvas.height) c.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255,' + c.alpha + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      circles = [];
+      initCanvas();
+    });
+
+    initCanvas();
+  </script>
+</body>
+</html>
