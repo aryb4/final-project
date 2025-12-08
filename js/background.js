@@ -29,7 +29,7 @@
       baseAlpha: Math.random() * 0.5 + 0.3,
       alpha: 0,
       direction: Math.random() < 0.5 ? 1 : -1,
-      speed: Math.random() * 0.02 + 0.005
+      speed: Math.random() * 0.01 + 0.005
     }));
 
     animateDots();
