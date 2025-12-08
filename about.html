@@ -3,35 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Your Portfolio</title>
+  <title>About Me | Aryan Bonula</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="assets/logo.svg" alt="Your Brand Logo" /></a>
+    <a href="index.html">
+      <img src="assets/logo.svg" alt="Aryan Bonula Logo" />
+    </a>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">Who I Am</a></li>
+        <li><a href="about.html" class="active">Who I Am</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="content">
-    <h1>About Me</h1>
-    <img src="assets/profile.jpg" alt="My Photo" class="profile-pic"/>
-    <p>
-      I’m currently studying Computer Information Systems at Michigan State University (MSU).  
-      I enjoy learning new technologies and building applications that are both efficient and user‑friendly.  
-      I believe in writing clean, maintainable code and building software with accessibility and usability in mind.  
-      In the future, I aim to work as a full‑stack developer or systems analyst, contributing to projects that make people’s lives easier.
+  <!-- Hero with animation -->
+  <section id="hero" class="page-hero">
+    <h1>Who I Am</h1>
+  </section>
+
+  <main>
+    <img src="assets/aboutme.png" alt="Aryan Bonula" class="profile-pic" />
+
+    <p style="text-align: center; max-width: 700px; margin: 0 auto;">
+      I'm Aryan Bonula, a Information Science student at Michigan State University. I am interested in Web development and AI.
+    </p>
+
+    <p style="text-align: center; max-width: 700px; margin: 20px auto;">
+      I'm particularly interested in full-stack development, cloud solutions, and artificial intelligence architecture. My career goal is to be able to work on projects that influence people for the better.
     </p>
   </main>
 
   <footer>
     <p>&copy; 2025 Aryan Bonula</p>
   </footer>
+
+  <script src="js/background.js"></script>
 </body>
 </html>
